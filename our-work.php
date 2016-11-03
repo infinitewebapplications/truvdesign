@@ -37,11 +37,11 @@ include('includes/menu.php');
     <div class="thumbnail">
       <img src="/img/truvdesign_thumb.jpg" alt="Our Tools - Shopbot" class="img-responsive">
       <div class="caption">
-        <h3 class="mt-0">Shopbot</h3>
+        <h4 class="mt-0">Shopbot</h4>
       </div><!-- /.caption -->
+    </div><!-- /.thumbnail -->
   </div><!-- /.col-xs-12 -->
 </div><!-- /.row -->
-
 
 <?php
 include('includes/foot.php');

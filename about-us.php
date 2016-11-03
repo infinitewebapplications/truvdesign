@@ -13,6 +13,8 @@ include('includes/menu.php');
 
 <h1>About Us</h1>
 
+<img src="/img/david-and-paul-nance-truvdesign_thumb.jpg" alt="Paul and David Nance" title="Paul and David Nance" class="img-responsive img-thumbnail about-us-img">
+
 <h2>David Nance</h2>
 <p>Art is not a separate thing in my life, everything I see is through
 eyes that work on painting possibilities. How would I go about capturing

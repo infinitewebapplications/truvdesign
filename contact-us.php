@@ -10,14 +10,51 @@ if(!empty($_POST)) {
     'error' => false,
     'msg' => 'Email has been sent! Thank you, we will contact you shortly.',
   ];
-  // set variables..
-  $name = $_POST['name'];
-  $emai = $_POST['email'];
-  $mess = $_POST['message'];
+  // set variables.. and filter before we submit
+  $name = filter_var($_POST['name'], FILTER_SANITIZE_STRING);
+  $emai = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+  $mess = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
 
   // validate them
-  if(!empty($name) && !empty($name) && !empty($name)) {
+  if(!empty($name) && !empty($emai) && !empty($mess)) {
     // send e-mail
+
+    // to
+    $to  = 'paul@truvdesign.com, david@truvdesign.com';
+
+    // subject
+    $subject = 'TruVdesign New Contact!';
+
+    // message
+    $message = "<html><head><title>" . $subject . "</title></head>
+<body>
+  <p>Here is your new submission from TruVdesign:</p>
+  <table>
+    <tr>
+      <td><strong>Name:</strong></td>
+      <td> " . $name . "</td>
+    </tr>
+    <tr>
+      <td><strong>Email:</strong></td>
+      <td> " . $emai . "</td>
+    </tr>
+    <tr>
+      <td><strong>Message:</strong></td>
+      <td> " . $mess . "</td>
+    </tr>
+  </table>
+</body></html>";
+
+    // set content headers
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+    // from
+    $headers .= 'From: ' . $name . ' <' . $emai . '>' . "\r\n";
+
+    // you've got mail
+    mail($to, $subject, $message, $headers);
+
   } else {
     // error on submission
     $return = [
@@ -50,7 +87,7 @@ include('includes/menu.php');
 <h1>Contact Us</h1>
 
 <div ng-controller="formCtrl">
-  <form name="contactForm" ng-submit="submit(contactForm)" autocomplete="off" novalidate>
+  <form name="contactForm" id="contact-form" ng-submit="submit(contactForm)" autocomplete="off" novalidate>
     <div class="row">
       <div class="col-xs-12 col-md-6">
         <div class="form-group">
@@ -83,9 +120,6 @@ include('includes/menu.php');
           <p ng-show="contactForm.message.$invalid && !contactForm.message.$pristine" class="help-block text-danger">Please write a short message.</p>
         </div><!-- /.form-group -->
       </div><!-- /.col-xs-12 -->
-      <div class="col-xs-12">
-        <div id="message-area"></div>
-      </div><!-- /.col-xs-12 -->
       <?php
       /*
       <div class="col-xs-12">
@@ -102,6 +136,16 @@ include('includes/menu.php');
       </div><!-- /.col-xs-12 -->
     </div><!-- /.row -->
   </form>
+  <div class="row">
+    <div class="col-xs-12">
+      <div id="message-area">
+        <div class="alert alert-{{ msg.class }}" role="alert">
+          <h3 class="mt-0">{{ msg.title }}</h3>
+          <p class="mb-0">{{ msg.text }}</p>
+        </div><!-- /.alert -->
+      </div><!-- /#message-area -->
+    </div><!-- /.col-xs-12 -->
+  </div><!-- /.row -->
 </div>
 
 <?php

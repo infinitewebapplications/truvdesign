@@ -3,6 +3,14 @@
 var app = angular.module('truvdesign', []);
 
 app.controller('formCtrl', function($scope, $http) {
+  var conForm = document.getElementById('contact-form');
+  var msgArea = document.getElementById('message-area');
+  msgArea.style.display = 'none';
+  $scope.msg = {
+    class : null,
+    text : null,
+    title : null
+  };
 
   $scope.submit = function(form) {
     // form valid?
@@ -16,12 +24,16 @@ app.controller('formCtrl', function($scope, $http) {
       };
       // make request
       $http.post('/contact-us', data, config).then(function successCallback(res){
+        msgArea.style.display = 'block';
+        $scope.msg.text = res.data.msg;
         // error?
         if(res.data.error === true) {
-          console.log('error');
+          $scope.msg.class = 'danger';
+          $scope.msg.title = 'Error!';
         } else {
-          console.log('success');
-          console.log(res.data);
+          conForm.style.display = 'none';
+          $scope.msg.class = 'success';
+          $scope.msg.title = 'Success!';
         }
       });
     } else {

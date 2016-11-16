@@ -38,10 +38,10 @@ and designing looms, narrow fabric knitting machines. After the textile
 industry changed I moved into more wood and metal working machine
 design, as technology changed the need to move from drafting board type
 work to computer generated design using AutoCAD and SolidWorks
-type software.
+type software.</p>
 <p>After working for more than 30 years in the industry, it was decided
 to collaborate with my brother (David) and start a business combining
-my creative experiences to design and make various wood items.</p>
+our creative experiences to design and make various wood items.</p>
 <p>We chose a CNC woodworking machine "Shopbot" to allow us to create
 simple and complex designs. Starting out with signage for commercial use,
 adding personalized items for weddings, home decor and simple furniture

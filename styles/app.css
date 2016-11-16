@@ -111,12 +111,6 @@ h1 {
   margin-bottom: 15px;
 }
 
-/* about us */
-.about-us-img {
-  float: left;
-  margin: 0 15px 0 0;
-}
-
 /* tablets (sm) */
 @media (min-width: 768px) {
   .h1-header {

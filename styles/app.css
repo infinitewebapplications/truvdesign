@@ -25,6 +25,11 @@ a {
   color: #009ffd;
 }
 
+p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
 .h1-header {
   color: rgba(0,0,0,0.5);
   font-size: 48px;
@@ -45,6 +50,10 @@ h1 {
 .well {
   background-color: #eaf6ff;
   border-radius: 0;
+}
+
+.well-shade {
+  background-color: #fff;
 }
 
 .alert-home {
@@ -88,6 +97,7 @@ h1 {
   border-bottom: 4px solid transparent;
   background-color: transparent;
   color: #232528;
+  font-size: 16px;
 }
 .nav > li > a:focus,
 .nav > li > a:hover,
@@ -111,10 +121,14 @@ h1 {
   margin-bottom: 15px;
 }
 
-/* about us */
-.about-us-img {
-  float: left;
-  margin: 0 15px 0 0;
+/* contact us */
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
 }
 
 /* tablets (sm) */

@@ -11,7 +11,8 @@ include('includes/head.php');
 include('includes/menu.php');
 ?>
 
-<p class="lead mbt-30"><strong>TruVdesign</strong> is a Wood and Plastic CNC cutting machine company. We can create pretty much anything you can imagine..</p>
+<p class="lead mbt-30 text-center"><strong>TruVdesign</strong> is a Wood and Plastic CNC
+cutting machine company.<br>We can create pretty much anything you can imagine..</p>
 
 <?php
 include('includes/foot.php');

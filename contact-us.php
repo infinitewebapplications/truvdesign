@@ -93,14 +93,14 @@ include('includes/menu.php');
         <div class="form-group">
           <label for="name">Name *</label>
           <input type="text" name="name" class="form-control" ng-model="contact.name" ng-minlength="3" required>
-          <p ng-show="contactForm.name.$invalid && !contactForm.name.$pristine" class="help-block text-danger">Your name is required.</p>
+          <p class="help-block text-danger" ng-cloak ng-show="contactForm.name.$invalid && !contactForm.name.$pristine">Your name is required.</p>
         </div><!-- /.form-group -->
       </div><!-- /.col-xs-12 -->
       <div class="col-xs-12 col-md-6">
         <div class="form-group">
           <label for="email">Email *</label>
           <input type="email" name="email" class="form-control" ng-model="contact.email" ng-minlength="5" required>
-          <p ng-show="contactForm.email.$invalid && !contactForm.email.$pristine" class="help-block text-danger">Email is too short.</p>
+          <p class="help-block text-danger" ng-cloak ng-show="contactForm.email.$invalid && !contactForm.email.$pristine">Email is too short.</p>
         </div><!-- /.form-group -->
       </div><!-- /.col-xs-12 -->
       <?php
@@ -117,7 +117,7 @@ include('includes/menu.php');
         <div class="form-group">
           <label for="message">Message *</label>
           <textarea name="message" class="form-control" rows="3" ng-model="contact.message" ng-minlength="10" required></textarea>
-          <p ng-show="contactForm.message.$invalid && !contactForm.message.$pristine" class="help-block text-danger">Please write a short message.</p>
+          <p class="help-block text-danger" ng-cloak ng-show="contactForm.message.$invalid && !contactForm.message.$pristine">Please write a short message.</p>
         </div><!-- /.form-group -->
       </div><!-- /.col-xs-12 -->
       <?php

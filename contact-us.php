@@ -138,7 +138,7 @@ include('includes/menu.php');
   </form>
   <div class="row">
     <div class="col-xs-12">
-      <div id="message-area">
+      <div id="message-area" ng-cloak>
         <div class="alert alert-{{ msg.class }}" role="alert">
           <h3 class="mt-0">{{ msg.title }}</h3>
           <p class="mb-0">{{ msg.text }}</p>

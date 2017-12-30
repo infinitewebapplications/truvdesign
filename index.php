@@ -6,13 +6,10 @@ $home = 'active';
 
 // include head
 include('includes/head.php');
-
-// include menu
-include('includes/menu.php');
 ?>
 
-<p class="lead mbt-30 text-center"><strong>TruVdesign</strong> is a Wood and Plastic CNC
-cutting machine company.<br>We can create pretty much anything you can imagine..</p>
+<p class="lead mbt-30 text-center">Our new website is under construction... check back soon.</p>
+<p class="text-center">Please visit us on <a href="https://facebook.com/truvdesign" target="_blank">facebook.com/TruVdesign</a></p>
 
 <?php
 include('includes/foot.php');

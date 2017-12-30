@@ -20,7 +20,8 @@ if(!empty($_POST)) {
     // send e-mail
 
     // to
-    $to  = 'paul@truvdesign.com, david@truvdesign.com';
+    // $to  = 'paul@truvdesign.com, david@truvdesign.com';
+    $to  = 'pnance@triad.rr.com';
 
     // subject
     $subject = 'TruVdesign New Contact!';
